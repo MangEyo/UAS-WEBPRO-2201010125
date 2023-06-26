@@ -1,0 +1,16 @@
+Judul Proyek: Kalkulator BMI dengan PHP
+
+Deskripsi Proyek:
+Kalkulator BMI dengan PHP adalah proyek yang bertujuan untuk mengembangkan sebuah aplikasi sederhana yang memungkinkan pengguna untuk menghitung Indeks Massa Tubuh (Body Mass Index/BMI) mereka secara online.
+
+Fitur yang akan disertakan dalam proyek ini meliputi:
+1. Formulir Input: Pengguna akan dapat memasukkan berat badan (dalam kilogram) dan tinggi (dalam sentimeter) berserta umur saat ini melalui formulir yang disediakan.
+2. Perhitungan Otomatis: Setelah pengguna mengisi data, PHP akan menghitung BMI mereka secara otomatis berdasarkan formula BMI yang ditentukan.
+3. Tampilan Hasil: Hasil perhitungan akan ditampilkan kepada pengguna dalam bentuk tabel yang dimana berisikan BMI pengguna, selisih berat badan, serta kekurangan/kelebihan kalori pada saat ini.
+5. Validasi Input: Proyek ini akan mencakup validasi input untuk memastikan bahwa data yang dimasukkan oleh pengguna adalah angka yang valid untuk berat badan, tinggi, umur, serta memastikan bahwa data yang dimasukkan tidak kosong.
+
+Keuntungan penggunaan proyek ini adalah memberikan pengguna informasi tentang status BMI mereka dengan cepat dan mudah, membantu mereka dalam mengambil keputusan yang tepat untuk meningkatkan kesehatan dan gaya hidup mereka.
+
+Proyek ini akan diimplementasikan menggunakan bahasa pemrograman PHP dan HTML untuk membangun tampilan antarmuka pengguna.
+
+Dengan menggunakan proyek Kalkulator BMI dengan PHP ini, pengguna akan dapat dengan mudah menghitung BMI mereka dan mendapatkan pemahaman yang lebih baik tentang kondisi kesehatan mereka berdasarkan angka BMI yang dihasilkan.
