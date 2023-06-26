@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator Berat Badan Ideal</title>
+  <script src="jquery-3.7.0.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      margin-bottom: 10px;
+    }
+
+    .input-container label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .input-container select {
+      width: 200px;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    #hitung {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #hitung:hover {
+      background-color: #45a049;
+    }
+
+    #hasil {
+      text-align: center;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      $('#hitung').click(function() {
+        var tinggi = parseFloat($('#tinggi').val());
+        var berat = parseFloat($('#berat').val());
+        var umur = parseInt($('#umur').val());
+        var gender = $('#gender').val();
+
+        if (!isNaN(tinggi) && !isNaN(berat) && !isNaN(umur)) {
+          var ideal;
+
+          if (gender === 'laki') {
+            ideal = (tinggi - 100) - ((tinggi - 100) * 0.1);
+          } else {
+            ideal = (tinggi - 100) - ((tinggi - 100) * 0.15);
+          }
+
+          var perbedaan = berat - ideal;
+          var kalori;
+
+          if (perbedaan > 0) {
+            kalori = 25 * perbedaan;
+          } else {
+            kalori = 30 * perbedaan;
+          }
+
+          $('#hasil').html('<table>' +
+                            '<tr><th>Informasi</th><th>Nilai</th></tr>' +
+                            '<tr><td>Berat badan ideal</td><td>' + ideal.toFixed(2) + ' kg</td></tr>' +
+                            '<tr><td>Berat badan saat ini</td><td>' + berat.toFixed(2) + ' kg</td></tr>' +
+                            '<tr><td>Perbedaan berat badan</td><td>' + perbedaan.toFixed(2) + ' kg</td></tr>' +
+                            '<tr><td>Kebutuhan kalori harian</td><td>' + kalori.toFixed(2) + ' kalori</td></tr>' +
+                            '</table>');
+        } else {
+          alert('Mohon masukkan tinggi badan, berat badan, dan umur dengan benar.');
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Kalkulator Berat Badan Ideal</h1>
+
+  <div class="container">
+    <div class="input-container">
+      <label for="tinggi">Tinggi Badan (cm):</label>
+      <input type="text" id="tinggi">
+    </div>
+
+    <div class="input-container">
+      <label for="berat">Berat Badan Saat Ini (kg):</label>
+      <input type="text" id="berat">
+    </div>
+
+    <div class="input-container">
+      <label for="umur">Umur:</label>
+      <input type="text" id="umur">
+    </div>
+
+    <div class="input-container">
+      <label for="gender">Jenis Kelamin:</label>
+      <select id="gender">
+        <option value="laki">Laki-laki</option>
+        <option value="perempuan">Perempuan</option>
+      </select>
+    </div>
+
+    <button id="hitung">Hitung</button>
+  </div>
+
+  <div id="hasil"></div>
+</body>
+</html>
